@@ -153,7 +153,7 @@ export interface ICLOptions {
   logger?: ILogger,
   em?: EventEmitter,
 
-  projectId?: string,
+  envCode?: string,
   getConsulUIAddress?: TMethod<string>,
   hash?: string,
 }

@@ -25,7 +25,7 @@ export default async ({ instanceSuffix, agentHost, serviceName }: {
     {
       config: config_,
       logger,
-      projectId: process.env.PROJECT_ID || 'proj',
+      envCode: process.env.PROJECT_ID || 'proj',
     },
   );
   config.service = config_.service;
