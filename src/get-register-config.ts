@@ -59,8 +59,8 @@ export const getRegisterConfig = async (options: ICLOptions): Promise<IRegisterC
     metaObj.pj_name = packageJson.name;
     metaObj.pj_version = packageJson.version;
   }
-  if (metaObj.pj_name !== 'af-consul') {
-    packageJson = getPackageJson('/node_modules/af-consul');
+  if (metaObj.pj_name !== 'af-consul-ts') {
+    packageJson = getPackageJson('/node_modules/af-consul-ts');
     if (packageJson) {
       metaObj.af_consul_version = packageJson.version;
     }

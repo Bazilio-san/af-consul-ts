@@ -33,7 +33,7 @@ module.exports = {
     },
   },
   service: {
-    name: e.CONSUL_SERVICE_NAME || 'af-consul',
+    name: e.CONSUL_SERVICE_NAME || 'af-consul-ts',
     instance: e.CONSUL_SERVICE_INSTANCE || 'test',
     version: e.CONSUL_SERVICE_VERSION || '0.0.1',
     description: e.CONSUL_SERVICE_DESCRIPTION || 'AF-CONSUL TEST',
