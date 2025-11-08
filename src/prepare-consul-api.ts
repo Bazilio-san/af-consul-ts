@@ -347,7 +347,9 @@ export const prepareConsulAPI = async (clOptions: ICLOptions): Promise<IConsulAP
 
       const already = (): TRegisterResult => {
         if (!registerOptions.noAlreadyRegisteredMessage) {
-          logger.debug(`${srv} already registered in Consul`);
+          if (dbg.on) {
+            console.log(`${srv} already registered in Consul`);
+          }
         }
         return 'already';
       };
