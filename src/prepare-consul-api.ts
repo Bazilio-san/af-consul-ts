@@ -377,7 +377,9 @@ export const prepareConsulAPI = async (clOptions: ICLOptions): Promise<IConsulAP
       }
       const isJustRegistered = await this.agentServiceRegister(registerConfig);
       if (isJustRegistered) {
-        logger.info(`${srv} is registered in Consul`);
+        if (dbg.on) {
+          logger.info(`${srv} is registered in Consul`);
+        }
       } else {
         logger.error(`${srv} is NOT registered in Consul`);
       }
