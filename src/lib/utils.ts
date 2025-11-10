@@ -27,7 +27,7 @@ export const substitutePercentBracket = (v: string, data: any): string => {
   let result: string = v;
   const matches = [...v.matchAll(re)];
   matches.forEach(([found, propName]) => {
-    const substitution = String(data[propName] || '');
+    const substitution = String(data[propName!] || '');
     result = result.replace(found, substitution);
   });
   return result;
