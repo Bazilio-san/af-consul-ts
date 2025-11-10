@@ -83,6 +83,7 @@ export class AccessPoints {
       return undefined;
     }
     if (apData.noConsul) {
+      // @ts-ignore
       this[apKey] = apData;
       return AccessPoints.getPureProps(apData);
     }

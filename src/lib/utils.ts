@@ -22,7 +22,7 @@ export const parseBoolean = (bv: any): boolean => {
   return !/^(false|no|0)$/i.test(bv.trim().toLowerCase());
 };
 
-export const substitutePercentBracket = (v: string, data: object): string => {
+export const substitutePercentBracket = (v: string, data: any): string => {
   const re = /%?{([^}]+)}/g;
   let result: string = v;
   const matches = [...v.matchAll(re)];
@@ -105,8 +105,8 @@ export const serviceConfigDiff = (registerConfig: IRegisterConfig, serviceInfo: 
   const mastBeEquals = [['id', 'ID'], ['name', 'Service'], ['port', 'Port'], ['address', 'Address']];
   let diff: any[] = [];
   mastBeEquals.some(([p1, p2]) => {
-    if (registerConfig[p1 as keyof IRegisterConfig] !== serviceInfo[p2]) {
-      diff = [p1, registerConfig[p1 as keyof IRegisterConfig], p2, serviceInfo[p2]];
+    if (registerConfig[p1 as keyof IRegisterConfig] !== serviceInfo[p2!]) {
+      diff = [p1, registerConfig[p1 as keyof IRegisterConfig], p2, serviceInfo[p2!]];
       return true;
     }
     return false;
