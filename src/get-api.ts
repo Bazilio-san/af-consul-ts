@@ -48,6 +48,7 @@ export const getAPI = async (options: ICLOptions): Promise<IAFConsulAPI> => {
         cyclic: getRegisterCyclic(options, api, registerConfig),
       },
       deregister: (svcId?: string, agentOptions?: IConsulAgentOptions) => api.deregisterIfNeed(svcId || serviceId, agentOptions),
+      consulUI,
     } as IAFConsulAPI;
 
     Object.entries(api).forEach(([k, v]) => {

@@ -252,6 +252,7 @@ export interface IAFConsulAPI extends IConsulAPI {
     cyclic: IRegisterCyclic,
   }
   deregister: (svcId?: string, agentHost?: string, agentPort?: string) => Promise<boolean>
+  consulUI?: string,
 }
 
 export interface ICache<T> {
