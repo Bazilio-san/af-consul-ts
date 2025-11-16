@@ -36,8 +36,9 @@ export const getAPI = async (options: ICLOptions): Promise<IAFConsulAPI> => {
     const serviceId = registerConfig.id;
     minimizeCache(apiCache, MAX_API_CACHED);
 
-    options.logger?.info(`Consul UI: ${(options.getConsulUIAddress || defaultGetConsulUIAddress)(serviceId)}`);
+    const consulUI = (options.getConsulUIAddress || defaultGetConsulUIAddress)(serviceId);
     debug(`${yellow} REGISTER CONFIG:\n${JSON.stringify(registerConfig, undefined, 2)}\n${reset}`);
+    debug(`Consul UI: ${consulUI}`);
 
     const value = {
       registerConfig,
