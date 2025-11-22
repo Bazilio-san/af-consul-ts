@@ -129,6 +129,18 @@ export interface IAFConsulConfig {
     meta?: string | IMeta,
     host?: Nullable<string>,
     port?: Nullable<string | number>
+    /**
+     * if false - disable the registration of the service with the consul
+     * Does not affect anything directly in this package and should be used where the package is imported
+     */
+    enable?: boolean,
+    /**
+     * @deprecated use `enable` instead
+     * if true - disable the registration of the service with the consul.
+     * For backward compatibility, has an increased priority of enable.
+     *
+     * Does not affect anything directly in this package and should be used where the package is imported
+     */
     noRegOnStart?: boolean,
   },
 }
